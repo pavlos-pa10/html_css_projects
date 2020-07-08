@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<style>
+
+body{
+    background-color:#0e0b16 ;
+}
+#survey-form{
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding:10px;
+    margin:20px;
+    display: block;
+    box-sizing:border-box;
+    border: 20px solid white;
+    border-radius: 10px;
+}
+h1{
+    text-align: center;
+    color: whitesmoke;
+}
+h2{
+    color: white;
+}
+input[type=text] {
+    width: 50%;
+    padding: 10px 10px;
+    margin: 1px 0;
+    box-sizing: border-box;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+input[type=number]{
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+input[type=email]{
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+#dropdown{
+    width: 50%;
+    padding: 10px 10px;
+    margin: 4px 0;
+    box-sizing: border-box;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+textarea{
+    width:50%;
+    height:150px;
+}
+label{
+    color:white;
+    font-size: 20px;
+
+}
+</style>
+
+<hmtl>
+  <head> </head>
+  <body>
+    <h1 id="title">PA Book Club survey</h1>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <p id="description">
+      Please help us bring you the features you would like to see in our book
+      club
+    </p>
+    <form id="survey-form">
+      <label id="name-label" for="firstname">Name</label> <br />
+      <input
+        type="text"
+        id="name"
+        name="firstname"
+        required
+        placeholder="First and Last Name"
+      /><br />
+      <label id="email-label" for="emailaddress"> Email </label> <br />
+      <input
+        type="email"
+        id="email"
+        name="emailaddress"
+        required
+        placeholder="Enter your email address"
+      />
+      <br />
+      <label id="number-label" for="age">Age (optional)</label> <br />
+      <input
+        type="number"
+        id="number"
+        name="age"
+        min="18"
+        max="100"
+        placeholder="Enter your age"
+      />
+      <br />
+      <label id="favouritebook"> Choose your favourite type of book </label> </br>
+
+      <select id="dropdown" name="booktypes">
+        <option value="fiction">Fiction</option>
+        <option value="nonfiction">Non Fiction</option>
+        <option value="crime">Crime</option>
+        <option value="poetry">Poetry</option>
+      </select>
+      <br />
+      <h2>How often would you like to have the book club meetings?</h2>
+      <input type="radio" id="weekly" name="frequency" value="weekly" />
+      <label for="weekly">Weekly </label> <br />
+      <input type="radio" id="bi-weekly" name="frequency" value="bi-weekly" />
+      <label for="weekly">Bi-weekly </label> <br />
+      <input type="radio" id="monthly" name="frequency" value="monthly" />
+      <label for="monthly">Monthly</label> <br />
+      <br />
+      <h2>Please select books that you have read and enjoyed from below:</h2>
+      <input type="checkbox" id="lotr" name="lotr" value="lotr" />
+      <label for="lotr">The Lord of the Rings </label>
+      <br />
+      <input
+        type="checkbox"
+        id="biglittlelies"
+        name="biglittlelies"
+        value="biglittlelies"
+      />
+      <label for="biglittlelies"> Big Little Lies</label>
+      <br />
+      <input
+        type="checkbox"
+        id="girlwomanother"
+        name="girlwomanother"
+        value="girlwomanother"
+      />
+      <label for="girlwomanother"> Girl Woman Other</label>
+      <br />
+      <input
+        type="checkbox"
+        id="dutchhouse"
+        name="dutchhouse"
+        value="dutchhouse"
+      />
+      <label for="dutchhouse"> The Dutch House</label>
+  <br />
+      <br />
+      <label for="textarea">Any other comments?</label> </br>
+      <textarea  id="textarea" name="textarea"></textarea>
+      
+      <br />
+      <br />
+      <br />
+      <input type="submit" id="submit" /> <br />
+    </form>
+  </body>
+</hmtl>
