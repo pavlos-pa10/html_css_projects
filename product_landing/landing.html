@@ -1,10 +1,179 @@
 <!DOCTYPE html>
-<style></style>
+<style>
+  body {
+    background-color: wheat;
+    text-align: center;
+  }
+
+  @media (max-width: 500px) {
+    #form {
+      background-color: lightcoral;
+    }
+  }
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rosybrown;
+    z-index: 1;
+  }
+
+  #header-img {
+    width: 50%;
+    max-width: 20%;
+  }
+  nav {
+    font-size: 40px;
+
+    color: honeydew;
+    width: 50%;
+  }
+  .nav-link {
+    color: ivory;
+  }
+
+  .main {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: stretch;
+  }
+  #music {
+    width: 50%;
+  }
+  #products {
+    width: 100%;
+  }
+  #bio {
+    width: 50%;
+  }
+  #register {
+    width: 100%;
+  }
+  #form {
+    text-align: center;
+    padding: 10px;
+    margin: 20px;
+    display: inherit;
+  }
+  /* unvisited link */
+  a:link {
+    color: white;
+    text-decoration: none;
+  }
+
+  /* visited link */
+  a:visited {
+    color: black;
+  }
+
+  /* mouse over link */
+  a:hover {
+    color: hotpink;
+  }
+
+  /* selected link */
+  a:active {
+    color: blue;
+  }
+
+  #image {
+    margin: auto;
+    max-width: 50%;
+    height: auto;
+    display: block;
+  }
+  #youtube {
+    margin: auto;
+    max-width: 50%;
+    height: auto;
+    display: block;
+  }
+</style>
 
 <html>
   <head> </head>
 
   <body>
+    <header id="header">
+      <img
+        id="header-img"
+        src="./img/alanis_logo_white.png"
+        alt="alanis logo"
+      />
+      <nav id="nav-bar">
+        <a href="#music" class="nav-link">Music</a>
+        <a href="#bio" class="nav-link">Bio</a>
+        <a href="#products" class="nav-link">Shop</a>
+      </nav>
+    </header>
+
+    <main class="main">
+      <div id="music">
+        <h2>Music</h2>
+
+        <!--<video id="video" width="320" height="240" controls>
+          <source src="https://www.youtube.com/watch?v=Jne9t8sHpUc"
+          type=video/mp4>
+        </video> 
+    -->
+
+        <iframe
+          id="youtube"
+          width="320"
+          height="240"
+          src="https://www.youtube.com/embed/Jne9t8sHpUc"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <div id="bio">
+        <h2>Bio</h2>
+        <p>
+          Alanis Morissette, in full Alanis Nadine Morissette, (born June 1,
+          1974, Ottawa, Ontario, Canada), Canadian musician known for her
+          confessional lyrics and a layered rock-influenced sound. Her 1995
+          album Jagged Little Pill established her as one of alternative rock's
+          foremost female vocalists of the 1990s.
+        </p>
+      </div>
+      <div id="products">
+        <h2>Shop</h2>
+        <figure>
+          <img
+            src="img/jlp_cover.jpg"
+            id="image"
+            alt="Alanis JLP album cover"
+          />
+
+          <figcaption>Jagged Little Pill £9.99</figcaption>
+        </figure>
+      </div>
+
+      <div id="register">
+        <form id="form" action="https://www.freecodecamp.com/email-submit">
+          <label id="email-label" for="email">
+            Please register below to receive news about new releases using your
+            email address:
+          </label>
+          <br />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="Enter your email address"
+          />
+          <input type="submit" id="submit" value="Register" /> <br />
+        </form>
+      </div>
+    </main>
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
   </body>
 </html>
