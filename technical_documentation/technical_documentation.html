@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<style>
+
+.navbar{
+height:100%;
+width: 160px;
+left:0;
+position: fixed;
+z-index:1;
+top:0;
+background-color: rgb(124, 132, 240);
+padding-top: 0px;
+overflow-x: hidden; /* Disable horizontal scroll */
+}
+
+.nav-link  {
+    padding: 8px 8px 8px 32px;
+    left: 0;
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+    color: white;
+}
+.main-section{
+    margin-left: 160px; /* Same as the width of the sidebar */
+    padding: 0px 10px;
+}
+#navbar_title{
+    color:white;
+}
+/* On smaller screens, where height is less than 450px OR width les than 500px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px ), screen and ( max-width: 500px) {
+  .navbar {padding-top: 15px;}
+  .nav-link     {font-size: 16px;}
+}
+</style>
+
+<html>
+  <head>
+    <title>CSS Flexbox technical documentation</title>
+  </head>
+
+  <body>
+      <header>
+        <nav id="navbar" class="navbar">
+            <header><h1 id="navbar_title" >CSS Flexbox documentation  </h1></header>
+            
+               <a href="#introduction_to_css_flexbox" class="nav-link">Introduction to css flexbox</a>
+         <a href="#container_properties" class="nav-link"> Container properties </a>
+          <a href="#flex_direction" class="nav-link"> Flex direction </a>
+           <a href="#flex_wrap" class="nav-link"> Flex wrap</a>
+         <a href="#justify_content" class="nav-link"> Justify content </a>
+           <a href="#flex_shorthand" class="nav-link"> Flex shorthand </a>
+       
+        </nav>
+      </header>
+    <main id="main-doc">
+      <section class="main-section" id="introduction_to_css_flexbox">
+        <header> <h2>Introduction to CSS flexbox </h2></header>
+        <p>
+          A website’s User Interface (“UI”) has two components. First, there are
+          the visual elements, such as colors, fonts, and images. Second, there
+          is the placement or positioning of those elements. In Responsive Web
+          Design, a UI layout must accommodate many different browsers and
+          devices accessing the content.
+        </p>
+        <p>
+          CSS3 introduced Flexible Boxes, or flexbox, to create page layouts for
+          a dynamic UI. It is a layout mode that arranges elements in a
+          predictable way for different screen sizes and browsers. While
+          somewhat new, all popular modern browsers support flexbox.
+        </p>
+      </section>
+
+      <section class="main-section" id="container_properties">
+        <header> <h2>Container properties </h2></header>
+        <p>
+          Placing the CSS property ## display: flex; on an element allows you to
+          use other flex properties to build a responsive page.
+        </p>
+        <code>
+          #box-container { height: 500px; display:flex; }
+        </code>
+      </section>
+
+      <section class="main-section" id="flex_direction">
+        <header> <h2>Flex direction </h2></header>
+        <p>
+          Adding display: flex to an element turns it into a flex container.
+          This makes it possible to align any children of that element into rows
+          or columns. You do this by adding the flex-direction property to the
+          parent item and setting it to row or column.
+        </p>
+        <p>
+          Creating a row will align the children horizontally, and creating a
+          column will align the children vertically. Other options for
+          flex-direction are row-reverse and column-reverse.
+        </p>
+        <p>Note: The default value for the flex-direction property is row.</p>
+      </section>
+
+      <section class="main-section" id="flex_wrap">
+        <header><h2>Flex wrap </h2></header>
+        <p>
+          CSS flexbox has a feature to split a flex item into multiple rows (or
+          columns). By default, a flex container will fit all flex items
+          together. For example, a row will all be on one line. However, using
+          the flex-wrap property tells CSS to wrap items. This means extra items
+          move into a new row or column. The break point of where the wrapping
+          happens depends on the size of the items and the size of the
+          container.
+        </p>
+        <p>CSS also has options for the direction of the wrap:
+            <ul> 
+                <li> nowrap: this is the default setting, and does not wrap items.</li>
+                <li> wrap: wraps items from left-to-right if they are in a row, or top-to-bottom if they are in a column.</li> 
+       <li> wrap-reverse: wraps items from right-to-left if they are in a row, or bottom-to-top if they are in a column.</li>
+            </ul>
+          
+            </p>
+      </section>
+      <section class="main-section" id="justify_content">
+        <header><h2> Justify content</h2></header>
+        <p>Sometimes the flex items within a flex container do not fill all the space in the container. It is common to want to tell CSS how to align and space out the flex items a certain way. Fortunately, the justify-content property has several options to do this. But first, there is some important terminology to understand before reviewing those options.</p>
+    <p>Recall that setting a flex container as a row places the flex items side-by-side from left-to-right. A flex container set as a column places the flex items in a vertical stack from top-to-bottom. 
+        For each, the direction the flex items are arranged is called the **main axis**. For a row, this is a horizontal line that cuts through each item. And for a column, the main axis is a vertical line through the items.</p>
+    <p>There are several options for how to space the flex items along the line that is the main axis. One of the most commonly used is justify-content: center;, which aligns all the flex items to the center inside the flex container. Others options include:
+    </p>
+    <p>
+        <ul>
+<li>flex-start: aligns items to the start of the flex container. For a row, this pushes the items to the left of the container. For a column, this pushes the items to the top of the container. This is the default alignment if no justify-content is specified.</li>
+<li>flex-end: aligns items to the end of the flex container. For a row, this pushes the items to the right of the container. For a column, this pushes the items to the bottom of the container.</li>
+<li>space-between: aligns items to the center of the main axis, with extra space placed between the items. The first and last items are pushed to the very edge of the flex container. For example, in a row the first item is against the left side of the container, the last item is against the right side of the container, then the remaining space is distributed evenly among the other items.</li>
+<li>space-around: similar to space-between but the first and last items are not locked to the edges of the container, the space is distributed around all the items with a half space on either end of the flex container.</li>
+<li> space-evenly: Distributes space evenly between the flex items with a full space at either end of the flex container</li>
+        </ul>
+       <h4>Examples </h4> 
+        <code> justify-content:space-around </code>
+        <code> justify-content:flex-start</code>
+    </p>
+  
+    </section>
+    <section class="main-section" id="flex_shorthand">
+        <header> <h2>Flex shorthand </h2> </header>
+        <p>There is a shortcut available to set several flex properties at once. The flex-grow, flex-shrink, and flex-basis properties can all be set together by using the flex property.
+            For example, flex: 1 0 10px; will set the item to flex-grow: 1;, flex-shrink: 0;, and flex-basis: 10px;.
+            The default property settings are flex: 0 1 auto;.
+            </p>
+        <code><style>
+            #box-container {
+              display: flex;
+              height: 500px;
+            }
+            #box-1 {
+              background-color: dodgerblue;
+              flex: 2 2 150px;
+              height: 200px;
+            }
+          
+            #box-2 {
+              background-color: orangered;
+              flex: 1 1 150px;
+              height: 200px;
+            }
+          </style>
+          
+          
+          </code>
+
+        <code>
+            < div id="box-container">
+            < div id="box-1"></div>
+            < div id="box-2"></div>
+          </ div></code>
+          <br>
+
+    </section>
+
+  
+    </main>
+
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</html>
